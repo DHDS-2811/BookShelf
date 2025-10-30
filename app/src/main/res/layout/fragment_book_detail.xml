@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="16dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView android:id="@+id/tvTitle" android:textStyle="bold"
+        android:textSize="20sp" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView android:id="@+id/tvAuthor" android:layout_marginTop="4dp"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <RatingBar
+        android:id="@+id/detailRating"
+        android:layout_marginTop="8dp"
+        android:numStars="5"
+        android:stepSize="1"
+        android:isIndicator="true"
+        android:clickable="false"
+        android:focusable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView android:id="@+id/tvRead"
+        android:layout_marginTop="8dp" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView android:id="@+id/tvNotes" android:layout_marginTop="12dp"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEdit"
+        style="?attr/materialButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:layout_marginTop="16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDelete"
+        style="?attr/materialButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:layout_marginTop="8dp"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBack"
+        style="?attr/materialButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:layout_marginTop="8dp"/>
+
+
+</LinearLayout>
