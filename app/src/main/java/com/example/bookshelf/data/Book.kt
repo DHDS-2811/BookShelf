@@ -10,5 +10,6 @@ data class Book(
     val author: String,
     val rating: Int = 0,
     val read: Boolean = false,
-    val notes: String = ""
+    val notes: String = "",
+    val genre: String = ""
 )

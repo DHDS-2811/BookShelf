@@ -8,8 +8,7 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/listToolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title="@string/books" />
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -57,6 +56,22 @@
                 android:layout_height="wrap_content"
                 android:text="@string/filter_unread"/>
         </com.google.android.material.chip.ChipGroup>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/genreFilterLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/genre_filter_hint"
+            app:endIconMode="dropdown_menu">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/genreFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <androidx.recyclerview.widget.RecyclerView

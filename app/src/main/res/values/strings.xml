@@ -9,7 +9,7 @@
     <string name="title">Title</string>
     <string name="author">Author</string>
     <string name="notes_optional">Notes (optional)</string>
-    <string name="rating">Rating</string>
+    <string name="rating">Rating (optional)</string>
     <string name="mark_as_read">Mark as read</string>
     <string name="save">Save</string>
     <string name="read">READ</string>
@@ -19,5 +19,27 @@
     <string name="book_detail">Book detail</string>
     <string name="cancel">Cancel</string>
     <string name="back">Back</string>
+    <string name="genre">Genre</string>
+
+
+    <string name="genre_optional">Genre (optional)</string>
+    <string name="sort_by_genre">Sort by genre</string>
+
+    <!-- Genre labels (internal/raw values) -->
+    <string name="g_general">General</string>
+    <string name="g_fantasy">Fantasy</string>
+    <string name="g_scifi">Sci-Fi</string>
+    <string name="g_mystery">Mystery</string>
+    <string name="g_romance">Romance</string>
+    <string name="g_horror">Horror</string>
+    <string name="g_nonfiction">Non-fiction</string>
+    <string name="g_computing">Computing</string>
+    <string name="g_history">History</string>
+    <string name="g_classics">Classics</string>
+    <string name="g_science">Science</string>
+    <string name="g_other">Other</string>
+    <string name="all_genres">All genres</string>
+    <string name="genre_filter_hint">Filter by genre</string>
+    <string name="required">Required</string>
 
 </resources>

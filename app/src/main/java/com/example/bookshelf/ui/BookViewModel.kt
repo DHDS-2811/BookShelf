@@ -54,6 +54,29 @@ class BookViewModel(app: Application) : AndroidViewModel(app) {
             onDone()
         }
     }
+
+    fun addOrUpdate(
+        id: Int?,
+        title: String,
+        author: String,
+        rating: Int,
+        read: Boolean,
+        notes: String,
+        genre: String,                         // NEW
+        onDone: (Int) -> Unit
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val book = if (id != null && id > 0) {
+                val existing = repo.get(id) ?: Book(id=0, title=title, author=author, rating=rating, read=read, notes=notes, genre=genre)
+                existing.copy(title = title, author = author, rating = rating, read = read, notes = notes, genre = genre)
+            } else {
+                Book(title = title, author = author, rating = rating, read = read, notes = notes, genre = genre)
+            }
+            val newId = if (book.id == 0) repo.add(book).toInt() else { repo.update(book); book.id }
+            onDone(newId)
+        }
+    }
+
     fun setRead(id: Int, read: Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
             val b = repo.get(id) ?: return@launch

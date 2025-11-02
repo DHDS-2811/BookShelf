@@ -21,6 +21,16 @@ class BookDetailFragment : Fragment() {
         _binding = FragmentBookDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
+    private fun decorateGenre(value: String): String {
+        val map = mapOf(
+            "General" to "📖", "Fantasy" to "🐉", "Sci-Fi" to "🚀", "Mystery" to "🕵️",
+            "Romance" to "💘", "Horror" to "👻", "Non-fiction" to "🧠", "Computing" to "💻",
+            "History" to "📜", "Classics" to "🎭", "Science" to "🧪", "Other" to "📚"
+        )
+        if (value.isBlank()) return ""
+        val emoji = map[value] ?: "📚"
+        return "$emoji  $value"
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         id = requireArguments().getInt("bookId")
@@ -34,6 +44,7 @@ class BookDetailFragment : Fragment() {
                     binding.detailRating.rating = book.rating.toFloat()
                     binding.tvRead.text = if (book.read) getString(R.string.read) else getString(R.string.unread)
                     binding.tvNotes.text = book.notes
+                    binding.tvGenre.text = decorateGenre(book.genre)
                 }
             }
         }
